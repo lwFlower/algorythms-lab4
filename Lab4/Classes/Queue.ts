@@ -10,6 +10,7 @@ class QueueNode<T> {
 export class Queue<T> {
   private front: QueueNode<T> | null = null; // первый элемент
   private end: QueueNode<T> | null = null;  // последний элемент
+  private _size = 0;
 
   // Добавление элемента в конец очереди
   enqueue(data: T): void {
@@ -21,6 +22,7 @@ export class Queue<T> {
       this.end.next = newNode;
       this.end = newNode;
     }
+    this._size++;
   }
 
   // Удаление элемента из начала очереди
@@ -29,6 +31,7 @@ export class Queue<T> {
     const value = this.front.data;
     this.front = this.front.next;
     if (!this.front) this.end = null; // если очередь опустела
+    this._size--;
     return value;
   }
 
@@ -40,5 +43,9 @@ export class Queue<T> {
   // Проверка на пустоту
   isEmpty(): boolean {
     return this.front === null;
+  }
+
+  size(): number {
+    return this._size;
   }
 }
