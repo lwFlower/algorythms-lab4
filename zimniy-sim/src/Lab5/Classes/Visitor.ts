@@ -1,5 +1,5 @@
 
-class Visitor {
+export class Visitor {
   id: number;
   timeRemaining: number = 0;
 

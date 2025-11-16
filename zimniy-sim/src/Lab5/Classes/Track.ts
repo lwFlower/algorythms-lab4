@@ -1,15 +1,17 @@
 import { Queue } from "../../Lab4/Classes/Queue";
+import type { Visitor } from "./Visitor";
 
-export class Lift {
+export class Track {
   queue = new Queue<Visitor>();
   current: Visitor | null = null;
   timeLeft = 0;
-  liftTime = 5; //время подъема
+
+  slideTime = 2; //время съезда
 
   tick() {
     if (!this.current && !this.queue.isEmpty()) {
       this.current = this.queue.dequeue();
-      this.timeLeft = this.liftTime;
+      this.timeLeft = this.slideTime;
     }
 
     if (this.current) {

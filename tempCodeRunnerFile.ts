@@ -1,4 +1,4 @@
-import { Queue } from "./Lab4/Classes/Queue";
+import { Queue } from "./zimniy-sim/src/Lab4/Classes/Queue";
 
 /**
  * Тест очереди

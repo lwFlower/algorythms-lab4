@@ -1,17 +1,16 @@
-import { randomInt } from "crypto";
 import { Queue } from "../../Lab4/Classes/Queue";
+import type { Visitor } from "./Visitor";
 
-export class Track {
+export class Lift {
   queue = new Queue<Visitor>();
   current: Visitor | null = null;
   timeLeft = 0;
-
-  slideTime = 2; //время съезда
+  liftTime = 5; //время подъема
 
   tick() {
     if (!this.current && !this.queue.isEmpty()) {
       this.current = this.queue.dequeue();
-      this.timeLeft = this.slideTime;
+      this.timeLeft = this.liftTime;
     }
 
     if (this.current) {

@@ -1,7 +1,7 @@
 import { DoublyLinkedList } from "../Classes/DoublyLinkedList";
 import { Queue } from "../Classes/Queue";
 import { Stack } from "../Classes/Stack";
-import { printMemoryUsage } from "../Utils";
+import { printMemoryUsage } from "../../Utils";
 
 /**
  * Тест очереди

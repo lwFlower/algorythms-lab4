@@ -1,8 +1,9 @@
 import { CashDesk } from "./Classes/CashDesk";
 import { Lift } from "./Classes/Lift";
 import { Track } from "./Classes/Track";
+import { Visitor } from "./Classes/Visitor";
 
-class Simulation {
+export class Simulation {
   time = 0;
 
   cashDesk = new CashDesk();

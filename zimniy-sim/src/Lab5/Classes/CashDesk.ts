@@ -1,5 +1,6 @@
-import { randomInt } from "crypto";
 import { Queue } from "../../Lab4/Classes/Queue";
+import { randomInt } from "../../Utils";
+import type { Visitor } from "./Visitor";
 
 export class CashDesk {
   queue = new Queue<Visitor>();
