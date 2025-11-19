@@ -1,11 +1,11 @@
-import { Queue } from "../../Lab4/Classes/Queue";
+import { Queue } from "../../../../Lab4/Classes/Queue";
 import type { Visitor } from "./Visitor";
 
 export class Lift {
   queue = new Queue<Visitor>();
   current: Visitor | null = null;
   timeLeft = 0;
-  liftTime = 5; //время подъема
+  liftTime = 15; //время подъема
 
   tick() {
     if (!this.current && !this.queue.isEmpty()) {

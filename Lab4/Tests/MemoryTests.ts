@@ -1,5 +1,5 @@
 import { Stack } from "../Classes/Stack";
-import { printMemoryUsage } from "../../Utils";
+import { printMemoryUsage } from "../../zimniy-sim/src/Utils";
 
 // === тест ===
 const stackSmall = new Stack<number>();

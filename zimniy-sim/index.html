@@ -10,6 +10,7 @@
       }
       canvas {
         max-width: 900px;
+        max-height: 500px;
       }
       #toggleSim {
         font-size: 18px;
@@ -22,6 +23,8 @@
   <body>
     <h1>График размеров очередей</h1>
     <button id="toggleSim">Пауза</button>
+    <button id="checkOverload">Проверить перегрузку</button>
+    <div id="warnings" style="margin-top: 10px; color: red; font-weight: bold;"></div>
 
     <canvas id="queueChart" width="800" height="400"></canvas>
 

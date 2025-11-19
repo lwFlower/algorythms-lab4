@@ -7,7 +7,7 @@ export class Simulation {
   time = 0;
 
   cashDesk = new CashDesk();
-  tracks = [new Track(), new Track(), new Track()];
+  tracks = [new Track(), new Track()];
   lift = new Lift();
 
   visitorId = 1;
@@ -16,7 +16,8 @@ export class Simulation {
     this.time++;
 
     // 1. Новые посетители
-    if (Math.random() < 0.7) { //шанс 70%
+    if (Math.random() < 0.8) { //шанс 70%
+      console.log('new visitor')
       this.cashDesk.queue.enqueue(new Visitor(this.visitorId++));
     }
 
@@ -29,6 +30,7 @@ export class Simulation {
 
     // 3. Трассы
     for (const track of this.tracks) {
+      console.log('track size: ', track.queue.size())
       const finished = track.tick();
       if (finished) {
         this.lift.queue.enqueue(finished);
@@ -50,13 +52,13 @@ export class Simulation {
 
   checkOverload() {
     // Например:
-    if (this.cashDesk.queue.size() > 20) {
+    if (this.cashDesk.queue.size() > 5) {
       console.log(`⚠️ В ${this.time} минут касса перегружена. Нужно открыть вторую кассу!`);
     }
-    if (this.tracks.some(t => t.queue.size() > 10)) {
+    if (this.tracks.some(t => t.queue.size() > 5)) {
       console.log(`⚠️ В ${this.time} минут трассы перегружены. Нужно добавить трассу!`);
     }
-    if (this.lift.queue.size() > 15) {
+    if (this.lift.queue.size() > 5) {
       console.log(`⚠️ В ${this.time} минут подъемник перегружен. Нужен второй!`);
     }
   }

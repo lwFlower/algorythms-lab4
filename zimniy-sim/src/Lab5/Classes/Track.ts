@@ -1,4 +1,4 @@
-import { Queue } from "../../Lab4/Classes/Queue";
+import { Queue } from "../../../../Lab4/Classes/Queue";
 import type { Visitor } from "./Visitor";
 
 export class Track {
@@ -6,7 +6,7 @@ export class Track {
   current: Visitor | null = null;
   timeLeft = 0;
 
-  slideTime = 2; //время съезда
+  slideTime = 10; //время съезда
 
   tick() {
     if (!this.current && !this.queue.isEmpty()) {

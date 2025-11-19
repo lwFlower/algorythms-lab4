@@ -24,4 +24,4 @@ else {
     console.log("Запусти с флагом --expose-gc, чтобы протестировать принудительный GC");
 }
 // tsc Lab4/Tests/GarbageCollectorTest.ts
-// node --expose-gc GarbageCollectorTest.js
+// node --expose-gc Lab4/Tests/GarbageCollectorTest.js

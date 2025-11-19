@@ -1,4 +1,4 @@
-import { Queue } from "../../Lab4/Classes/Queue";
+import { Queue } from "../../../../Lab4/Classes/Queue";
 import { randomInt } from "../../Utils";
 import type { Visitor } from "./Visitor";
 
@@ -6,7 +6,7 @@ export class CashDesk {
   queue = new Queue<Visitor>();
 
   current: Visitor | null = null;
-  timeLeft = randomInt(1, 3);
+  timeLeft = 0;
 
   tick() {
     if (!this.current && !this.queue.isEmpty()) {
